@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:defaultValue="192.168.88.1"
+        android:key="pref_host"
+        android:summary="@string/pref_host_summ"
+        android:title="@string/pref_host" />
+    <EditTextPreference
+        android:defaultValue="prc"
+        android:inputType="textPassword"
+        android:key="pref_pass"
+        android:summary="@string/pref_pass_summ"
+        android:title="@string/pref_pass" />
+
+    <!-- <EditTextPreference -->
+    <!-- android:defaultValue="mk4db" -->
+    <!-- android:key="pref_db" -->
+    <!-- android:summary="@string/pref_db_summ" -->
+    <!-- android:title="@string/pref_db" /> -->
+    <!-- <EditTextPreference -->
+    <!-- android:defaultValue="rcuser" -->
+    <!-- android:key="pref_db_user" -->
+    <!-- android:summary="@string/pref_db_user_summ" -->
+    <!-- android:title="@string/pref_user" /> -->
+    <!-- <EditTextPreference -->
+    <!-- android:inputType="textPassword" -->
+    <!-- android:defaultValue="prc100trc100" -->
+    <!-- android:key="pref_pass" -->
+    <!-- android:summary="@string/pref_db_pass_summ" -->
+    <!-- android:title="@string/pref_db_pass" /> -->
+
+</PreferenceScreen>
