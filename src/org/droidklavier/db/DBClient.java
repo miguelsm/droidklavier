@@ -14,7 +14,7 @@ public class DBClient {
 
 	private static final String TAG = "DBClient";
 
-	private final String HOST;
+	private String HOST;
 	private final int PORT = 5432;
 	private final String DATABASE;
 	private final String USER;
@@ -30,6 +30,10 @@ public class DBClient {
 		USER = user;
 		PASS = pass;
 	}
+	
+	public void setHost(String host) {
+		HOST = host;
+	}
 
 	public ResultSet executeQuery(String query) {
 
@@ -42,13 +46,15 @@ public class DBClient {
 		try {
 
 			Class.forName("org.postgresql.Driver");
-			connection = DriverManager.getConnection("jdbc:postgresql://"
-					+ HOST + ":" + PORT + "/" + DATABASE, USER, PASS);
+			String conn = "jdbc:postgresql://" + HOST + ":" + PORT + "/" + DATABASE; //, USER, PASS;
+			connection = DriverManager.getConnection(conn, USER, PASS);
+			if (connection == null) {
+				Log.e(TAG, "FAILED to get connection: " + conn + "," + USER + "," + PASS);
+				System.out.println("FAILED to get connection: " + conn+ "," + USER + "," + PASS);
+			}
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);
-
 		} catch (Exception e) {
-
 			disconnect();
 			e.printStackTrace();
 		}

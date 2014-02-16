@@ -31,6 +31,11 @@ public class DAO {
 		mDBClient = dbClient;
 	}
 
+	public void setHost(String host){
+		if(mDBClient != null)
+			mDBClient.setHost(host);
+	}
+	
 	public Album getAlbum(String source, int albumId) {
 
 		Album album = null;

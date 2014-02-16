@@ -194,7 +194,7 @@ public class TCPHandler extends Handler {
 			}
 		} catch (Exception e) {
 			if (BuildConfig.DEBUG) {
-				Log.e(TAG, "XML Parser Error: " + e.getMessage());
+				Log.e(TAG, "XML Parser Error: " + e.getMessage() + " when trying to parse [" + message + "]");
 			}
 			e.printStackTrace();
 		}
