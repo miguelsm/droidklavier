@@ -1,3 +1,5 @@
+.DS_Store
+
 # built application files
 *.apk
 *.ap_
@@ -18,3 +20,18 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+
+# Android Studio
+.idea/
+.gradle
+/.idea/workspace.xml
+/local.properties
+/*/local.properties
+/*/out
+/*/*/build
+/*/*/production
+*.iml
+*.iws
+*.ipr
+*~
+*.swp
