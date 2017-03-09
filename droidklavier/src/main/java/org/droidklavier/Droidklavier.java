@@ -110,7 +110,8 @@ public class Droidklavier extends Application {
 
   public void sendTCPMessage(String message) {
     if (isConnected()) {
-      mTcpClient.sendMessage(message);
+      SendMessageTask sendMessageTask = new SendMessageTask();
+      sendMessageTask.execute(message);
     }
   }
 
@@ -162,6 +163,15 @@ public class Droidklavier extends Application {
       if (isConnected()) {
         mTcpClient.connected();
       }
+    }
+  }
+
+  private class SendMessageTask extends AsyncTask<String, Void, Void> {
+
+    @Override
+    protected Void doInBackground(String... params) {
+      mTcpClient.sendMessage(params[0]);
+      return null;
     }
   }
 
