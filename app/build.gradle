@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25"
 
     defaultConfig {
-        applicationId "org.droidklavier.Droidklavier"
+        applicationId "org.droidklavier"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 5
